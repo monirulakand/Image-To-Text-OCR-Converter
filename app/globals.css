@@ -1,0 +1,270 @@
+:root {
+  --bg-solid: #090d16;
+  --ai-cyan: #00f0ff;
+  --ai-indigo: #6366f1;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--bg-solid) !important;
+  color: #f8fafc;
+  height: 100vh;
+}
+
+body {
+  font-family: var(--font-roboto), "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  background-image: none !important;
+}
+
+/* Full screen flex wrapper to center content horizontally and vertically */
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 70px);
+  width: 100%;
+  padding: 20px 0;
+}
+
+/* Full-screen looping background video */
+.bg-video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: brightness(0.4);
+}
+
+/* Modern Glassmorphic Panels */
+.input-div, .ocr-div {
+  padding: 28px;
+  background: rgba(17, 24, 39, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  width: 100%;
+  height: 480px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+.input-div:hover, .ocr-div:hover {
+  border-color: rgba(0, 240, 255, 0.3);
+}
+
+.card-label {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.badge-tech {
+  font-size: 10.5px;
+  color: var(--ai-cyan);
+  background: rgba(0, 240, 255, 0.08);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  letter-spacing: 0.5px;
+}
+
+/* Refined Preview Area */
+.preview-container {
+  border-radius: 14px;
+  background: rgba(3, 7, 18, 0.5);
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  padding: 8px;
+  transition: border-color 0.25s ease;
+}
+
+.preview-container:hover {
+  border-color: rgba(0, 240, 255, 0.4);
+}
+
+.preview-img {
+  width: 100%;
+  height: 190px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.ocr-content {
+  overflow-y: auto;
+  font-family: 'Fira Code', monospace, sans-serif;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: #e2e8f0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.ocr-div::-webkit-scrollbar {
+  width: 5px;
+}
+.ocr-div::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+.ocr-div::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.4);
+  border-radius: 4px;
+}
+
+/* Modernized File Input & Select Dropdown */
+.app-input {
+  background: rgba(11, 15, 25, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 10px !important;
+  color: #e2e8f0 !important;
+  padding: 11px 14px !important;
+  font-size: 13.5px;
+  transition: all 0.25s ease;
+}
+
+.app-input:hover {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.app-input:focus {
+  background: rgba(11, 15, 25, 0.95) !important;
+  border-color: var(--ai-cyan) !important;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.25) !important;
+}
+
+.app-input option {
+  background: #0b0f19;
+  color: #f8fafc;
+}
+
+/* Customizing "Browse Image" button inside file input */
+.app-input[type="file"] {
+  color: #94a3b8;
+}
+
+.app-input[type="file"]::file-selector-button {
+  background: rgba(99, 102, 241, 0.15);
+  color: #c7d2fe;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 12px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.app-input[type="file"]::file-selector-button:hover {
+  background: rgba(99, 102, 241, 0.3);
+  color: #ffffff;
+  border-color: var(--ai-cyan);
+}
+
+/* Submit Button with Sleek Cyberpunk/AI Gradient (No box-shadow on hover) */
+.btn-ai {
+  background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  box-shadow: none !important;
+  border-radius: 10px !important;
+  padding: 12px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn-ai:hover {
+  background: linear-gradient(135deg, #4338ca 0%, #0891b2 100%) !important;
+  border-color: var(--ai-cyan) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: none !important;
+}
+
+.btn-copy {
+  background: rgba(0, 240, 255, 0.08);
+  color: var(--ai-cyan);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  font-size: 11.5px;
+  border-radius: 6px;
+  padding: 4px 12px;
+  transition: all 0.2s ease;
+}
+
+.btn-copy:hover {
+  background: rgba(0, 240, 255, 0.2);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
+.ai-spinner {
+  width: 3rem;
+  height: 3.5rem;
+  color: var(--ai-cyan);
+  filter: drop-shadow(0 0 12px var(--ai-cyan));
+}
+
+.ai-loader-text {
+  font-size: 12px;
+  color: #94a3b8;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* Super Sleek Modern AI Toast Notification */
+.ai-toast {
+  background: rgba(15, 23, 42, 0.85) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(0, 240, 255, 0.25) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 15px rgba(0, 240, 255, 0.1) !important;
+  color: #f8fafc !important;
+  overflow: hidden;
+}
+
+.ai-toast .toast-header {
+  background: rgba(11, 15, 25, 0.6) !important;
+  color: #00f0ff !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.ai-toast .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.ai-toast .toast-body {
+  font-size: 13.5px;
+  color: #e2e8f0;
+  padding: 14px 16px;
+}
+
+/* Expanded Full-Width Transparent Glass Navbar */
+.navbar {
+  width: 100% !important;
+  max-width: 100% !important;
+  background: rgba(17, 24, 39, 0.4) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+
+.nav-logo {
+  width: auto;
+  height: 40px;
+  padding: 2px;
+  margin-left: 0px;
+  filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.5));
+}
